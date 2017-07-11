@@ -39,3 +39,4 @@ Thumbs.db
 # Specifically no BibTex file or SQL file should be appended
 *.bib
 *.sql
+*.db
