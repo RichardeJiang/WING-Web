@@ -78,6 +78,14 @@ if __name__ == "__main__":
             content += ("journal = \"" + journal + "\",\n")
             content += ("volume = \"" + volume + "\",\n")
             content += ("pages = \"" + pages + "\",\n")
+        elif str(pubtype) == "phdthesis":
+            schoolResult = c.execute("SELECT school FROM jos_jresearch_phdthesis WHERE id_publication = " + str(pubId) + ";")
+            school = str(c.fetchall()[0][0])
+            content += ("school = \"" + school + "\",\n")
+        elif str(pubtype) == "mastersthesis":
+            schoolResult = c.execute("SELECT school FROM jos_jresearch_mastersthesis WHERE id_publication = " + str(pubId) + ";")
+            school = str(c.fetchall()[0][0])
+            content += ("school = \"" + school + "\",\n")
 
         content += ("year = " + str(year) + "}\n\n")
 
